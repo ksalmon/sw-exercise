@@ -1,0 +1,285 @@
+// START NAV
+.top-nav-container {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  border-bottom: 1px solid #f1f1f1;
+  padding: 0 35px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  z-index: 1;
+
+  -webkit-box-shadow: 0px 3px 20px -9px rgba(173,173,173,0.3);
+  -moz-box-shadow: 0px 3px 20px -9px rgba(173,173,173,0.3);
+  box-shadow: 0px 3px 20px -9px rgba(173,173,173,0.3);
+
+  .logo {
+    width: 80px;
+    height: 80px;
+  }
+
+  .avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: url(https://img.cinemablend.com/filter:scale/quill/6/7/e/a/1/5/67ea15fc55a23e2b31af46cce2d227b02a7ddaae.jpg?fw=1200);
+    background-size: cover;
+    background-position: center;
+    transition: all 0.25s ease;
+
+    &:hover {
+      transform: scale(1.15);
+    } 
+  }
+}
+
+.left-nav-container {
+  position: fixed;
+  background: white;
+  width: 150px;
+  height: 100%;
+  top: 0; bottom: 0;
+  padding-top: 120px;
+  z-index: 0;
+  text-align: center;
+
+  .link-container {
+    display: block;
+    border-bottom: 3px solid #f3f3f3;
+    padding-bottom: 40px
+  }
+
+  .char-link {
+    color: #999;
+    text-decoration: none;
+    font-size: 12px;
+
+    &:before {
+      content: '';
+      background: url(https://cdn2.iconfinder.com/data/icons/star-wars-12/512/movie_film_star_wars_cinema_-16-512.png);
+      background-size: contain;
+      width: 45px;
+      height: 45px;
+      position: unset;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+}
+// END NAV
+
+// START PAGE 
+.page-container {
+  background: white;
+  height: 100%;
+  display: inline-block;
+  max-width: 75%;
+  width: 100%;
+  margin: 15px 0 0 165px;
+
+  -webkit-box-shadow: 0px 3px 20px -9px rgba(173,173,173,0.3);
+  -moz-box-shadow: 0px 3px 20px -9px rgba(173,173,173,0.3);
+  box-shadow: 0px 3px 20px -9px rgba(173,173,173,0.3);
+}
+
+.errors {
+  padding: 100px;
+  text-align: center;
+  color: #ff5c5c;
+  font-weight: 700;
+  font-size: 30px;
+  text-transform: uppercase;
+  text-decoration: overline;
+}
+// END PAGE 
+
+// START INDEX PAGE
+.character-header, .character-header {
+  margin: 0 0 30px;
+  padding: 100px 40px;
+  text-align: center;
+  color: #f9f9f9;
+  background-image: url(https://img5.goodfon.com/wallpaper/nbig/b/66/4k-uhd-background-stars-starry-sky-dark-space.jpg);
+}
+
+.characters-list {
+  width: 85%;
+  margin: 30px auto;
+  height: 100%;
+}
+.character-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #d0d0d0;
+  margin: 0 30px;
+  padding: 30px 0;
+  color: #666;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  font-size: 18px;
+  transition: all 0.25s ease;
+
+  &:hover {
+    color: #111;
+    transform: translate(0px, -5px);
+
+    .carot-right {
+      opacity: 0.8;
+    }
+  }
+
+  .carot-right {
+    background: url(https://image.flaticon.com/icons/svg/271/271228.svg);
+    background-size: cover;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    opacity: 0.5
+  }
+}
+// END INDEX PAGE
+
+// START SHOW PAGE
+.character-details,
+.startship-details,
+.home-details {
+  padding: 0px 40px 40px;
+}
+
+.character-details-list,
+.home-details-list,
+.startship-list {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 10px;
+
+  .detail {
+    > span:first-of-type {
+      font-weight: 600;
+      margin-right: 5px;
+    }
+
+    span {
+      font-size: 13px;
+      text-transform: capitalize;
+    }
+  }
+}
+
+.home-details,
+.startship-details {
+  border-top: 3px solid #f3f3f3;
+  padding-top: 30px;
+}
+
+.startship-list {
+  flex-wrap: wrap;
+}
+
+.starship {
+  flex: 0 45%;
+  margin-bottom: 50px;
+}
+
+// END SHOW PAGE
+
+// START LOADER 
+.sk-cube-grid {
+  width: 40px;
+  height: 40px;
+  margin: 50px auto;
+  padding: 50px;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #333;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+          animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out; 
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s; }
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s; }
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+          animation-delay: 0s; }
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+          animation-delay: 0.1s; }
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s; }
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1); 
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%, 70%, 100% {
+    -webkit-transform: scale3D(1, 1, 1);
+            transform: scale3D(1, 1, 1);
+  } 35% {
+    -webkit-transform: scale3D(0, 0, 1);
+            transform: scale3D(0, 0, 1);
+  } 
+}
+// END PAGE 
+
+
+// START MOBILE
+@media only screen and (max-width: 600px) {
+  .characters-list {
+    margin: 0;
+    width: 100%;
+  }
+
+  .left-nav-container { display:  none;}
+  .page-container {
+    margin: 0;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .character-details-list, .home-details-list, .startship-list {
+    display: block;
+  }
+
+  .character-details-list {
+    div {
+      flex: 0 1 100%;
+    }
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+}
+
+// END MOBILE

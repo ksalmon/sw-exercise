@@ -1,0 +1,51 @@
+// GLOBALS
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  padding-top: 80px;
+  background: #f3f3f3;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img { width: 100%; }
+
+h2, h5 {
+  text-transform: uppercase;
+  margin:0
+}
+
+h2 {
+  position: relative;
+  font-weight: 700;
+  font-size: 60px;
+  letter-spacing: 2.2px;
+  margin-bottom: 15px;
+  padding-bottom: 15px;
+  line-height: 1;
+}
+
+h2:after {
+  content: '';
+  width: 50px;
+  height: 1px;
+  background: #fff;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h5 {
+  font-size: 16px
+}
+
+h6 {
+  font-size: 16px;
+  margin: 5px 0;
+}
