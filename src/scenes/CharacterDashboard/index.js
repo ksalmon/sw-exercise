@@ -49,8 +49,6 @@ export default function CharacterDashboard() {
       { isFetching && (
         <Loader />
       )}
-      
-      <button id='loadButton' onClick={() => fetchPeople(page)}>Load More</button>
     </Page>
   )
 }

@@ -1,5 +1,10 @@
-# Starwars API Exercise
 
+# Starwars API Exercise
+[View the Website Here!]([https://sw-exercise.herokuapp.com/](https://sw-exercise.herokuapp.com/))
+- Boilerplate react.js application that uses axios for http requests.
+- State handled completly using react.js Hooks without any react Classes for better performance.
+- Built to be mobile friendly using SCSS and the node-scss pre-processor.
+- Index page includes infinite scroll functionality that calls through the [Starwars API]([https://swapi.co/](https://swapi.co/)) paginated pages.
 
 ## Available Scripts
 
@@ -23,7 +28,8 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 Builds the app for production to the `build` folder.<br />
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To test the build properly you can serve it locally by 
+`npm run build` &&
+`npm install -g serve` &&
+`serve -s build`
+inside the project directory
