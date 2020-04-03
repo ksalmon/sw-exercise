@@ -26,10 +26,11 @@ export default function CharacterDashboard() {
   };
 
   function handleScroll() {
-    var d = document.documentElement;
-    var offset = d.scrollTop + window.innerHeight;
-    var button = document.getElementById("loadButton")
-    var height = d.offsetHeight;
+    const d = document.documentElement;
+    const offset = d.scrollTop + window.innerHeight;
+    const button = document.getElementById("loadButton")
+    const height = d.offsetHeight;
+    const currentPage = page
 
     if ((offset >= height) && !fetching && button) {
       setFetchState(true)
@@ -41,7 +42,9 @@ export default function CharacterDashboard() {
   };
 
   useEffect(() => {
-    fetchPeople(page);
+    if (state.people.length <= 0) {
+      fetchPeople(page);
+    }
     window.addEventListener("scroll", handleScroll);
 
     return () => {
