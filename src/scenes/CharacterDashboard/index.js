@@ -6,49 +6,29 @@ import Page from '../../components/ParentScene'
 import CharacterCard from '../../components/CharacterCard'
 import Loader from '../../components/molocules/loader'
 
+import useInfiniteScroll from "../../hooks/scroll"
+
 export default function CharacterDashboard() {
   const [state, dispatch] = useContext(Context);
+  const [isFetching, setIsFetching] = useInfiniteScroll(fetchPeople);
   const [page, setPage] = useState(1);
-  const [fetching, setFetchState] = useState(false);
 
+  function fetchPeople() {
 
-  function fetchPeople(pageset = 1) {
-    console.log('fired')
-    axios.get('https://swapi.co/api/people?page=' + pageset)
+    axios.get('https://swapi.co/api/people?page=' + page)
       .then(response => {
         dispatch({type: 'INDEX_PEOPLE', payload: response.data.results})
         setPage(page + 1)
-        setFetchState(false)
+        setIsFetching(false)
       })
       .catch(error => {
         console.log(error)
       })
   };
 
-  function handleScroll() {
-    const d = document.documentElement;
-    const offset = d.scrollTop + window.innerHeight;
-    const button = document.getElementById("loadButton")
-    const height = d.offsetHeight;
-    const currentPage = page
-
-    if ((offset >= height) && !fetching && button) {
-      setFetchState(true)
-
-      // HACK due to ReactRouter having some issues with hooks.
-      // https://reactjs.org/warnings/invalid-hook-call-warning.html
-      setTimeout(function(){ button.click() }, 1000);
-    }
-  };
-
   useEffect(() => {
     if (state.people.length <= 0) {
-      fetchPeople(page);
-    }
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
+      fetchPeople();
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -66,7 +46,7 @@ export default function CharacterDashboard() {
         ))}
       </div>
 
-      { fetching && (
+      { isFetching && (
         <Loader />
       )}
       
